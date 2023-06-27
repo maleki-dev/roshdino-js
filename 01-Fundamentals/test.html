@@ -26,6 +26,11 @@
   <body>
     <h1>بخش اول - مباحث پایه</h1>
 
-    <script src="script.js"></script>
+    <script type="text/javascript">
+      var h1tag = document.querySelector("h1");
+      h1tag.addEventListener("click", function () {
+        this.textContent = "test title";
+      });
+    </script>
   </body>
 </html>
