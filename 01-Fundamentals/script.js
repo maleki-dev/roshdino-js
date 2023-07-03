@@ -128,3 +128,17 @@ console.log(Number.isNaN(numberd));
 //------------Statements and Expressions--------------
 
 //--------The Conditional (Ternary) Operator----------
+
+//------------ Activating Strict Mode--------------
+
+//------------------ Functions---------------------
+
+// Function declaration
+
+// calling or invoking or running function
+
+// Function expression
+
+// Arrow functions
+
+// Loops
