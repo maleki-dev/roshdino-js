@@ -221,3 +221,62 @@ console.log(lastEdward);
 // sort
 
 // reduce
+
+// const transactions = [
+//   { description: "Salary", amount: 3000 },
+//   { description: "Rent", amount: -1000 },
+//   { description: "Groceries", amount: -250 },
+//   { description: "Bonus", amount: 500 },
+//   { description: "Utilities", amount: -200 }
+// ];
+
+
+/*
+//_____________Exercises_____________
+1. Create an array of sentences from students array like this:
+['Edward has scored 21', 'John has scored 37', ...]
+
+
+2. Use the reduce method to count the occurrences of each element in an array.
+
+[1, 2, 1, 3, 4, 2, 5, 1, 6, 8, 7, 6]
+
+{
+  1: 3,
+  2: 2, 
+  ...
+}
+
+3. sort by priority that priorityCategories array gives you.
+if categories are the same sort by items's price descending:
+
+const products = [
+  { name: "Laptop", category: "Electronics", price: 800 },
+  { name: "Banana", category: "Fruits", price: 1.5 },
+  { name: "Headphones", category: "Electronics", price: 50 },
+  { name: "Orange", category: "Fruits", price: 2 },
+  { name: "TV", category: "Electronics", price: 1200 },
+  { name: "Apple", category: "Fruits", price: 1 }
+];
+
+const priorityCategories = ["Fruits", "Electronics"];
+
+*/
+
+//_____________String methodes_____________
+// length
+// toLowerCase
+// toUpperCase
+// trim
+// includes
+// indexOf
+// lastIndexOf
+// startsWith
+// endsWith
+// slice
+// substring
+// substr
+// replace
+// replaceAll
+// split
+
