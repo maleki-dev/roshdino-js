@@ -180,7 +180,7 @@ const isAnyStudentA = students
   })
   .some((student) => student.grade === "A");
 
-console.log("isAnyStudentA", isAnyStudentA);
+// console.log("isAnyStudentA", isAnyStudentA);
 
 // console.log(studentWithGrades);
 
@@ -304,17 +304,17 @@ const ascendingSortedPrices = prices.sort((a, b) => {
   return a - b;
 });
 
-console.log("ascendingSortedPrices", ascendingSortedPrices);
+// console.log("ascendingSortedPrices", ascendingSortedPrices);
 
 const descendingSortedPrices = prices.sort((a, b) => {
   return b - a;
 });
 
-console.log("descendingSortedPrices", descendingSortedPrices);
+// console.log("descendingSortedPrices", descendingSortedPrices);
 
 const sortedByScoreStudents = students.sort((a, b) => b.score - a.score);
 
-console.log("sortedByScoreStudents", sortedByScoreStudents);
+// console.log("sortedByScoreStudents", sortedByScoreStudents);
 
 // reduce
 
@@ -324,7 +324,7 @@ const totalPrice = prices.reduce(function (acc, item) {
   return acc + item;
 }, 0);
 
-console.log("totalPrice", totalPrice);
+// console.log("totalPrice", totalPrice);
 
 const transactions = [
   { description: "Salary", amount: 3000 },
@@ -339,7 +339,16 @@ const balance = transactions.reduce(
   0
 );
 
-console.log(balance);
+// console.log(balance);
+
+const postiiveBalance = transactions.reduce((acc, item) => {
+  if (item.amount > 0) {
+    return acc + item.amount;
+  }
+  return acc;
+}, 0);
+
+// console.log("positiveBalance", postiiveBalance);
 
 /*
 //_____________Exercises_____________
@@ -385,18 +394,137 @@ const priorityCategories = ["Fruits", "Electronics"];
 */
 
 //_____________String methodes_____________
+
+const myString = "I Love JavaScript";
+
 // length
+
+// console.log(myString.length);
+
+const newString = new String("I Love JavaScript");
+
+// console.log(newString);
+
+// console.log(newString.length);
+
+// console.log(typeof myString);
+// console.log(typeof newString);
+
+// console.log("first".length);
+
+const value = "  \nmy-Name@Gmail.COM ";
+
 // toLowerCase
+
+// console.log(value.toLowerCase());
+
+// console.log("my-Name".toLowerCase() === "my-name");
 // toUpperCase
+// console.log(value.toUpperCase());
 // trim
+// console.log(value);
+// console.log(value.trim());
+
 // includes
+
+// console.log(myString.toLowerCase().includes("love".toLowerCase()));
+
 // indexOf
+
+// console.log(myString.indexOf("love"));
+// console.log(myString.indexOf("a"));
+
 // lastIndexOf
+// console.log(myString.lastIndexOf("a"));
+
+// charAt, at
+
+// console.log(myString.charAt(8));
+// console.log(myString[8]);
+// console.log(myString.at(-1));
+
+//charCodeAt
+// console.log(myString.charCodeAt(8));
+
 // startsWith
+// console.log(myString.startsWith('I Love'));
 // endsWith
+// console.log(myString.endsWith('pt'));
+
 // slice
+const subString = myString.slice(-2);
+
+// console.log(subString);
+// console.log(myString);
+
 // substring
+
+// console.log("substring", myString.substring(2));
+// console.log(myString);
+
 // substr
+// console.log("substr", myString.substr(2));
+
 // replace
+const emailValue = "  \nmy-Name @G mail .COM ";
+
+// console.log(emailValue.toLowerCase().trim().replace(" ", ""));
+
 // replaceAll
+// console.log(emailValue.toLowerCase().trim().replaceAll(" ", ""));
+
+// console.log(myString.replace("JavaScript", "PHP"));
+
+const sentence1 = "my name is Sajjad Maleki";
+
+const replaced = sentence1.replaceAll(/([A-Z])\w+/g, "Ali");
+
+// console.log(replaced);
+
+// match
+// console.log(sentence1.match(/([A-Z])\w+/g));
+
+// matchAll
+// console.log(sentence1.matchAll(/([A-Z])\w+/g));
+
+// template-string
+
+const myName = "Sajjad";
+
+let paraph = "My name is Ali.\nI am a developer";
+
+paraph = "My name is " + myName + ".\nI am a developer";
+
+paraph = `My name is ${myName}.
+          I am a developer`;
+
+// console.log(paraph);
+
 // split
+
+const words1 = sentence1.split(" ");
+
+const words2 = sentence1.split(/([A-Z])\w+/g);
+// console.log(words2);
+
+const url = "http://my-site.com/products?id=124&name=mobile";
+
+const queryString = url.split("?").at(1);
+
+const queryParamStrings = queryString.split("&");
+
+// {id: 124, name: 'mobile}
+
+const queryParams = queryParamStrings.reduce((acc, item) => {
+  const keyValuePair = item.split("=");
+  const key = keyValuePair[0];
+  const value = keyValuePair[1];
+
+  acc[key] = value;
+  
+  return acc;
+}, {});
+
+console.log(queryString);
+console.log(queryParamStrings);
+console.log(queryParams);
