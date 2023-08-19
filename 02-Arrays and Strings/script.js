@@ -525,6 +525,21 @@ const queryParams = queryParamStrings.reduce((acc, item) => {
   return acc;
 }, {});
 
-console.log(queryString);
-console.log(queryParamStrings);
-console.log(queryParams);
+// console.log(queryString);
+// console.log(queryParamStrings);
+// console.log(queryParams);
+
+// const newUrl = new URL(url);
+// console.log(newUrl)
+
+const dataKey = 'fgo234-0-10';
+
+const paramKey = dataKey.split('-')[0];
+console.log(paramKey);
+
+const words = ['I', 'Love', 'JavaScript'];
+words.push('!');
+
+const fullSentence = words.join(' ');
+console.log(fullSentence);
+
