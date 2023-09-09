@@ -366,7 +366,12 @@ const students = [
 
 output: ['Edward has scored 21', 'John has scored 37', ...]
 
+*/
+console.log(students);
 
+const studentsReport = students.map(student => `${student.name} has scored ${student.score}`)
+console.log(studentsReport);
+/*
 2. Use the reduce method to count the occurrences of each element in an array.
 
 [1, 2, 1, 3, 4, 2, 5, 1, 6, 8, 7, 6]
@@ -376,7 +381,29 @@ output: ['Edward has scored 21', 'John has scored 37', ...]
   2: 2, 
   ...
 }
+*/
+const items = [1, 2, 1, 3, 4, 2, 5, 1, 6, 8, 7, 6]; //{ali: 3, hasan: 2}
+const itemsCount = items.reduce((acc, item) => {
+  if(acc[item]) {
+    acc[item] = acc[item] + 1
+  } else {
+    acc[item] = 1
+  }
+  return acc;
+}, {});
 
+console.log(itemsCount);
+
+const uniqueItems = items.reduce((acc, item)=>{
+  if(!acc.some(number => number === item)) {
+    acc.push(item)
+  }
+  return acc
+}, []);
+
+console.log(uniqueItems)
+
+/*
 3. sort by priority that priorityCategories array gives you.
 if categories are the same sort by items's price descending:
 
@@ -525,6 +552,21 @@ const queryParams = queryParamStrings.reduce((acc, item) => {
   return acc;
 }, {});
 
-console.log(queryString);
-console.log(queryParamStrings);
-console.log(queryParams);
+// console.log(queryString);
+// console.log(queryParamStrings);
+// console.log(queryParams);
+
+// const newUrl = new URL(url);
+// console.log(newUrl)
+
+const dataKey = 'fgo234-0-10';
+
+const paramKey = dataKey.split('-')[0];
+console.log(paramKey);
+
+const words = ['I', 'Love', 'JavaScript'];
+words.push('!');
+
+const fullSentence = words.join(' ');
+console.log(fullSentence);
+
