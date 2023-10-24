@@ -202,3 +202,24 @@ const add = null;
 
 add?.(1);
 
+
+// const parentId = data.category.parent ? data.category.parent._id : undefined
+const parentId = data.category?.parent?.id
+
+console.log(parentId);
+
+let myArr = [1, 2, 3];
+
+myArr = null;
+
+const firstItem = myArr?.[0];
+
+const add = null;
+
+add?.(1);
+
+
+// const parentId = data.category.parent ? data.category.parent._id : undefined
+const parentId = data.category?.parent?.id
+
+console.log(parentId)
