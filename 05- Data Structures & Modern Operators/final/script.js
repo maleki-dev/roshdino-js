@@ -25,25 +25,9 @@ const data = {
     amount: 120000,
     currency: "EURO",
   },
-  categories: [
-    {
-      id: 1,
-      name: "سریال",
-      slug: "series",
-      parent: null,
-    },
-    {
-      id: 516,
-      name: "سریال اکشن",
-      slug: "action-series",
-      parent: {
-        id: 1,
-        name: "سریال",
-        slug: "series",
-        parent: null,
-      },
-    },
-  ],
+
+  category: null,
+
   countries: [
     {
       id: 449,
@@ -52,6 +36,7 @@ const data = {
       slug: "usa",
     },
   ],
+  trivia: [],
   crew: [
     {
       id: 5572,
@@ -68,10 +53,6 @@ const data = {
       type: "STAR",
     },
   ],
-
-  getAwards() {
-    return ['return1', 'return2'];
-  },
 };
 
 
@@ -79,43 +60,145 @@ const data = {
 
 // Destructuring Arrays
 
-// Multiple return values from a function
+// const significantAward = data.awards[0];
+// const lessImportantAward = data.awards[1];
+
+let [significantAward, lessImportantAward] = data.awards;
 
 // Switching variables
 
+[significantAward, lessImportantAward] = [lessImportantAward, significantAward];
+
+
+// Multiple return values from a function
+
+function myFunc () {
+  const a = 10;
+  const b = false;
+
+  return [a, b];
+};
+
+const [a, b] = myFunc()
+
+// console.log(a, b)
+
 // Nested destructuring
 
+const arr = [1, 4, [6, [7]]];
+
+const [c, d, [e, [f]]] = arr;
+
+// console.log(c, d, e, f)
+
 // Default values
+
+const [trivia = 'not found'] = data.trivia
+
+// console.log(trivia);
 
 // Destructuring Objects
 
+const {amount: boxOfficeAmount, currency: boxOfficeCurrency} = data.boxOffice;
+
+// const {amount, currency} = data.budget;
+
+// console.log(boxOfficeAmount, currency)
+
 // Default values
+
+const {name = data.title} = data;
+
+// console.log(name)
 
 // Nested objects
 
+const {budget: {amount: budgetAmount, currency: budgetCurrency}} = data
 
 //--------------Spread Operator----------------
 // For Arrays
 
+const nums = [1, 2, 3, 4];
+
+const nums2 = [5, 6];
+
+const nums3 = [7, 8, ...nums]
+
+// console.log(nums3)
+
+function func1(a, b ,c ,d) {
+  console.log(a, b ,c ,d)
+}
+
+// func1(...nums)
+
 // Iterables: arrays, strings, maps, sets.
 
+const str = 'javascript';
+const arrayFromStr = [...str]
+// console.log(arrayFromStr)
+
 // For Objects
+
+const newData = {
+  ...data,
+  name: 'my name',
+}
+
+// console.log(newData)
 
 //------- Rest Pattern and Parameters--------
 // SPREAD, because on RIGHT side of =
 
 // REST, because on LEFT side of =
 
-// Objects
-
 //Arrays
+const [, num2, ...otherNums] = nums;
+
+// console.log(num2, otherNums)
+
+// Objects
+const {_id, ...mediaData} = data
 
 // Functions
+
+// function func2(...args) {
+//   console.log(args)
+//   console.log(...args)
+// }
+
+// func2(...nums)
 
 //----------- Modern operators-------------
 // Short Circuiting (&& and ||)
 
+const {firstName = 'my name'} = data;
+
+// console.log(null || false  || '0' || 'no name');
+
+// console.log(null && firstName && false)
+
+// isvailable && price
+
 // The Nullish Coalescing Operator
 
+// console.log(false ?? '' ?? undefined)
+
 // Optional Chaining
+
+
+// const parentId = data.category.parent ? data.category.parent._id : undefined
+const parentId = data.category?.parent?.id
+
+console.log(parentId);
+
+let myArr = [1, 2, 3];
+
+myArr = null;
+
+const firstItem = myArr?.[0];
+
+const add = null;
+
+add?.(1);
 
